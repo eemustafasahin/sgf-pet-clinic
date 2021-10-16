@@ -43,7 +43,6 @@
                 <!-- by default, config. deploy site-deploy -->
                 <configuration>
                     <goals>install</goals>
-                    <releaseProfiles>release</releaseProfiles>
                 </configuration>
             </plugin>
 

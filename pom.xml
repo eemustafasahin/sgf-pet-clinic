@@ -51,6 +51,5 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/eemustafasahin/sgf-pet-clinic.git</developerConnection>
-      <tag>HEAD</tag>
   </scm>
 </project>

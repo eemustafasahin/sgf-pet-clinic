@@ -9,8 +9,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>pet-clinic-web</artifactId>
+    <name>pet-clinic-web</name>
+    <description>SFG Pet Clinic Web Module Project</description>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -24,6 +25,7 @@
             <artifactId>pet-clinic-data</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
         <!-- actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

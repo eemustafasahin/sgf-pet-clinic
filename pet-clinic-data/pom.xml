@@ -10,10 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pet-clinic-data</artifactId>
+    <name>pet-clinic-data</name>
+    <description>SFG Pet Clinic Data Module Project</description>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
+
+        <!-- repackage option-->
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>
 
     <dependencies>
@@ -50,7 +55,7 @@
         </dependency>
     </dependencies>
 
-    <!-- plugin for build jar -->
+    <!-- plugin for build jar (alternative to repackage option) -->
     <build>
         <plugins>
             <plugin>
@@ -69,5 +74,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

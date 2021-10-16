@@ -23,13 +23,12 @@
     <name>sgf-pet-clinic</name>
     <description>SFG Pet Clinic Project</description>
 
-
     <properties>
         <java.version>11</java.version>
     </properties>
 
     <dependencies>
-
+        <!-- //... -->
     </dependencies>
 
     <!-- plugin for build jar -->

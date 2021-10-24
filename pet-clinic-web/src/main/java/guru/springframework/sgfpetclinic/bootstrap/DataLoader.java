@@ -1,6 +1,7 @@
 package guru.springframework.sgfpetclinic.bootstrap;
 
 import guru.springframework.sgfpetclinic.model.Owner;
+import guru.springframework.sgfpetclinic.model.Pet;
 import guru.springframework.sgfpetclinic.model.PetType;
 import guru.springframework.sgfpetclinic.model.Vet;
 import guru.springframework.sgfpetclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import guru.springframework.sgfpetclinic.services.PetTypeService;
 import guru.springframework.sgfpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -40,6 +43,17 @@ public class DataLoader implements CommandLineRunner {
         //owner1.setId(1L); //we have auto-generated method for id values anymore. (getNextId())
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("123 Brickerel");
+        owner1.setCity("Miami");
+        owner1.setTelephone("+90 536 555 44 33");
+
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthdate(LocalDate.now());
+        mikesPet.setName("Misco");
+        //following is done to sync both relationship.
+        owner1.getPets().add(mikesPet);
 
         m_ownerService.save(owner1);
 
@@ -47,6 +61,17 @@ public class DataLoader implements CommandLineRunner {
         //owner2.setId(2L);
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glemanne");
+        owner2.setAddress("124 Pickerel");
+        owner2.setCity("Ankara");
+        owner2.setTelephone("+90 535 555 44 33");
+
+        Pet fionasPet = new Pet();
+        fionasPet.setPetType(savedCatPetType);
+        fionasPet.setOwner(owner2);
+        fionasPet.setBirthdate(LocalDate.now());
+        fionasPet.setName("Fisco");
+        //following is done to sync both relationship.
+        owner2.getPets().add(fionasPet);
 
         m_ownerService.save(owner2);
 

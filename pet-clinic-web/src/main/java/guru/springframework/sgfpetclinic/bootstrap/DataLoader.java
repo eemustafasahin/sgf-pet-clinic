@@ -1,8 +1,10 @@
 package guru.springframework.sgfpetclinic.bootstrap;
 
 import guru.springframework.sgfpetclinic.model.Owner;
+import guru.springframework.sgfpetclinic.model.PetType;
 import guru.springframework.sgfpetclinic.model.Vet;
 import guru.springframework.sgfpetclinic.services.OwnerService;
+import guru.springframework.sgfpetclinic.services.PetTypeService;
 import guru.springframework.sgfpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,16 +14,28 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService m_ownerService;
     private final VetService m_vetService;
+    private final PetTypeService m_petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService)
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService)
     {
         m_ownerService = ownerService;
         m_vetService = vetService;
+        m_petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception
     {
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType = m_petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType savedCatPetType = m_petTypeService.save(cat);
+
+        System.out.println("Loaded PetTypes...");
+
         Owner owner1 = new Owner();
         //owner1.setId(1L); //we have auto-generated method for id values anymore. (getNextId())
         owner1.setFirstName("Michael");

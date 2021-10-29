@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "specialties")
-public class Specialty extends BaseEntity{
+public class Specialty extends BaseEntity { //pet type and specialty tables are reference tables
 
     @Column(name = "description")
     private String description;

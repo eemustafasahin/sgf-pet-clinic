@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "types")
-public class PetType extends BaseEntity{
+public class PetType extends BaseEntity { //pet type and specialty tables are reference tables
 
     @Column(name = "name")
     private String name;

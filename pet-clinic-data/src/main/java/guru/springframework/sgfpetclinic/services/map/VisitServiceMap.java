@@ -28,7 +28,7 @@ public class VisitServiceMap extends AbstractMapService<Visit, Long> implements 
     public Visit save(Visit visit)
     {
         if (visit == null)
-            throw new RuntimeException("Visit object cannot be null");
+            throw new RuntimeException("Visit object cannot be null.");
 
         if(visit.getPet() == null || visit.getPet().getOwner() == null ||
            visit.getPet().getId() == null || visit.getPet().getOwner().getId() == null)

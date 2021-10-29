@@ -5,11 +5,28 @@ import guru.springframework.sgfpetclinic.model.Pet;
 import guru.springframework.sgfpetclinic.services.OwnerService;
 import guru.springframework.sgfpetclinic.services.PetService;
 import guru.springframework.sgfpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+/*
+    - aktif profile olmaz ise burası default profile belirtildiği için servis olarak bu bean geçilir.
+    - eğer default profile yoksa yani profile belirtilmemiş ise ikiside çağrılmaz. Çünkü "map" profile
+    "map" profile aktif olduğunda çağrılır. "springdatajpa" profile "springdatajpa" profile aktif
+     olduğunda çağılır.
+
+    - *** yani profile belirtmiyor isek ya profile olmayan bir Service impl yazmalıyız ve onu servis
+    etmeliyiz veya profile belirtilen bir impl. default olarak seçmeliyiz ki default olarak o servis
+    geçilsin.
+
+    - 2021-10-29 16:22:49.674  INFO 11804 --- [  restartedMain] g.s.s.SgfPetClinicApplication
+               : No active profile set, falling back to default profiles: default
+
+
+ */
+@Profile({"default","map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService m_petTypeService;

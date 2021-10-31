@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
+
 /*
     - aktif profile olmaz ise burası default profile belirtildiği için servis olarak bu bean geçilir.
     - eğer default profile yoksa yani profile belirtilmemiş ise ikiside çağrılmaz. Çünkü "map" profile
@@ -27,6 +27,7 @@ import java.util.Set;
 
  */
 @Profile({"default","map"})
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService m_petTypeService;
@@ -92,6 +93,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public Owner findByLastName(String lastname)
     {
-        return null;
+        return this.findAll().stream().filter(owner -> owner.getLastName().equalsIgnoreCase(lastname))
+                .findFirst().orElse(null);
     }
 }

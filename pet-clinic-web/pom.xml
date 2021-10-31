@@ -52,6 +52,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- project lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!-- webjars -->
         <dependency>
             <groupId>org.webjars</groupId>

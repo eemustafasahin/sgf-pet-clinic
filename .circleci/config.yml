@@ -32,7 +32,9 @@ jobs:
 
       - run: mvn install -DskipTests
 
-      - run: mvn dependency:go-offline
+      - run:
+          name: Install Dependencies
+          command: mvn -DskipTests clean install dependency:resolve-plugins dependency:go-offline
 
       - save_cache:
           paths:

@@ -12,8 +12,8 @@
     <description>SFG Pet Clinic Web Module Project</description>
 
     <properties>
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
 
         <!-- Web dependencies -->
         <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>

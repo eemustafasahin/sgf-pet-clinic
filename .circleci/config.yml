@@ -23,7 +23,7 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependenciess
+      # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
